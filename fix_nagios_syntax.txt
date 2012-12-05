@@ -1,0 +1,43 @@
+#
+# 05.12.2012
+# Davit A.
+#
+
+#
+# Correct commands.cfg syntax
+#
+
+sed -i 's/^.*\(define\).*\(command\)\(.*\)\({\)/\1 \2\t\4/' commands.cfg
+sed -i 's/^\s*\(command_name\)\s*\(.*\)/\t\t\1\t\2/' commands.cfg
+sed -i 's/^\s*\(command_line\)\s*\(.*\)/\t\t\1\t\2/' commands.cfg
+sed -i 's/^\s*\(}\)/\t\t\1/' commands.cfg
+
+
+#==============================================================
+
+#
+# Correct services.cfg syntax
+#
+
+sed -i 's/^.*\(define\).*\(service\)\(.*\)\({\)/\1 \2\t\4/' services.cfg
+sed -i 's/^\s*\(use\)\s*\(.*\)/\t\t\1\t\t\t\2/' services.cfg
+sed -i 's/^\s*\(host_name\)\s*\(.*\)/\t\t\1\t\t\2/' services.cfg
+sed -i 's/^\s*\(hostgroup_name\)\s*\(.*\)/\t\t\1\t\t\2/' services.cfg
+sed -i 's/^\s*\(service_description\)\s*\(.*\)/\t\t\1\t\2/' services.cfg
+sed -i 's/^\s*\(check_command\)\s*\(.*\)/\t\t\1\t\t\2/' services.cfg
+sed -i 's/^\s*\(}\)/\t\t\1/' services.cfg
+
+
+#==============================================================
+
+#
+# Correct hosts.cfg syntax
+#
+
+sed -i 's/^.*\(define\).*\(host\)\(.*\)\({\)/\1 \2\t\4/' hosts.cfg
+sed -i 's/^\s*\(use\)\s*\(.*\)/\t\t\1\t\t\2/' hosts.cfg
+sed -i 's/^\s*\(host_name\)\s*\(.*\)/\t\t\1\t\2/' hosts.cfg
+sed -i 's/^\s*\(alias\)\s*\(.*\)/\t\t\1\t\t\2/' hosts.cfg
+sed -i 's/^\s*\(address\)\s*\(.*\)/\t\t\1\t\t\2/' hosts.cfg
+sed -i 's/^\s*\(contact_groups\)\s*\(.*\)/\t\t\1\t\2/' hosts.cfg
+sed -i 's/^\s*\(}\)/\t\t\1/' hosts.cfg
